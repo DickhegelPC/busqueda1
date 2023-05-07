@@ -19,5 +19,5 @@ document.getElementById("formulario").addEventListener("submit", function(event)
         alert("Por favor, seleccione una opción válida");
         return;
     }
-    window.location.href = url;
+    window.open(url, "_blank");
 });
