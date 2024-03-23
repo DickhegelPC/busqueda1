@@ -17,12 +17,6 @@
   margin: auto;
 }
 
-@media (max-width: 640px) {
-  .bg-flyer-gender-reveal img{
-    height: auto;
-  }
-}
-
 
 #countdown {
   font-size: 1em;
@@ -33,4 +27,13 @@
   padding: 15px 0px;
   background: #f1faff;
   color: #344678;
+}
+
+@media (max-width: 640px) {
+  .bg-flyer-gender-reveal img{
+    height: auto;
+  }
+  #countdown{
+    font-size: 0.5em;
+  }  
 }
