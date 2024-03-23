@@ -8,57 +8,40 @@
     <link rel="stylesheet" href="Resources/CSS/style.css">
 </head>
 <body>
-    <div class="contenedor">
-        <div class="conteiner">
-            <div class="content-img">
-                <img src="Resources/SVG/logo.png" alt="">
-            </div>
-
-            <div class="txt-datos">
-                <h2>Busqueda de Datos</h2>
-                <form id="formulario" action="#" method="get">
-                    <label for="anio">Selecciona un año:</label>
-                    <select name="anio" id="anio">
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                    </select>
-                    <label for="carrera">Selecciona una carrera:</label>
-                    <select name="carrera" id="carrera">
-                        <option value="mecanica">Mecánica</option>
-                        <option value="electricidad">Electricidad</option>
-                    </select>
-
-                <input type="submit" value="Enviar">
-            </div>
-        </div>
-    </div>
+   <div class="bg-flyer-gender-reveal">
+  <div class="flyer-gender-reveal">
+    <div id="countdown"></div>
+    <img src="https://i.ibb.co/GVdfprm/Flyer-revelacion-de-genero-1.jpg" alt="">
+  </div>
+</div>
 
     <script>
-        document.getElementById("formulario").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var anio = document.getElementById("anio").value;
-            var carrera = document.getElementById("carrera").value;
-            var url;
-            if (anio === "2022" && carrera === "mecanica") {
-                url = "https://www.escuelatecnicarubendario.com";
-            } else if (anio === "2022" && carrera === "electricidad") {
-                url = "https://ejemplo.com/seccion2";
-            } else if (anio === "2021" && carrera === "mecanica") {
-                url = "https://ejemplo.com/seccion3";
-            } else if (anio === "2021" && carrera === "electricidad") {
-                url = "https://ejemplo.com/seccion4";
-            } else if (anio === "2020" && carrera === "mecanica") {
-                url = "https://www.google.com";
-            } else if (anio === "2020" && carrera === "electricidad") {
-                url = "https://www.youtube.com";
-            }else {
-                alert("Por favor, seleccione una opción válida");
-                return;
-            }
-            /*window.location.href = url;*/
-            window.open(url, "_blank");
-        });
+        // Establecer la fecha objetivo
+const targetDate = new Date("June 29, 2024 17:00:00").getTime();
+
+// Actualizar el temporizador cada segundo
+const interval = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  // Calcular el tiempo restante
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Mostrar el tiempo restante en el elemento con id "countdown"
+  document.getElementById("countdown").innerHTML = `
+    <p>Faltan ${days} días, ${hours} horas, ${minutes} minutos, y ${seconds} segundos</p>
+  `;
+
+  // Si la cuenta regresiva termina, mostrar un mensaje
+  if (distance < 0) {
+    clearInterval(interval);
+    document.getElementById("countdown").innerHTML = "¡Ya es hora!";
+  }
+}, 1000);
+
 
     </script>
 </body>
