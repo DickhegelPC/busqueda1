@@ -17,24 +17,36 @@
   margin: auto;
 }
 
+@media (max-width: 640px) {
+  .bg-flyer-gender-reveal img{
+    height: auto;
+  }
+}
+
 
 #countdown {
-  font-size: 1em;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   font-family: archivo;
-  
+
   padding: 15px 0px;
   background: #f1faff;
   color: #344678;
 }
 
-@media (max-width: 640px) {
-  .bg-flyer-gender-reveal img{
-    height: auto;
-    border: 1px solid red;
-  }
-  #countdown{
-    font-size: 0.5em;
-  }  
+.group-button{
+  display: flex;
+  justify-content: center;
+}
+
+.group-button a{
+  background: #AFD3E1;
+  margin: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #1E6480;
+  border-radius: 5px;
+  font-family: 'segoe ui';
+  
 }
